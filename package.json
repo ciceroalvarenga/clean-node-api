@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/main/index.js",
-    "test": "jest --watchAll",
+    "test": "jest --watchAll --silent --colors --noStackTrace",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test -- --findRelatedTests --silent",
