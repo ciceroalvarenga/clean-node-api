@@ -11,11 +11,16 @@
     "test:ci": "npm test -- --coverage --silent",
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info"
   },
+  "standard": {
+    "env": ["jest"]
+  },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "husky": "^4.3.8",
     "jest": "^30.0.5",
+    "lint-staged": "^16.1.5",
     "standard": "^17.1.2"
   },
   "dependencies": {
