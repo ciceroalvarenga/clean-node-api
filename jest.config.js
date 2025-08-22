@@ -1,4 +1,4 @@
 module.exports = {
-  coverageDirectory: 'corevage',
+  coverageDirectory: 'coverage',
   testEnvironment: 'node'
 }
