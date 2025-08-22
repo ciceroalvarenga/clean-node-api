@@ -4,11 +4,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/main/index.js",
-    "test": "jest --watchAll --silent --colors --noStackTrace",
-    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test": "jest --silent --colors --noStackTrace --passWithNoTests",
+    "test:unit": "npm test -- --watch",
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
-    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace",
-    "test:ci": "jest --coverage --noStackTrace --silent",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage",
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info"
   },
   "standard": {
