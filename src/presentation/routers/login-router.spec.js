@@ -13,7 +13,7 @@ const makeSut = () => {
     sut,
     authUseCaseSpy,
     emailValidatorSpy
-  };
+  }
 }
 
 const makeEmailValidator = () => {
@@ -27,7 +27,7 @@ const makeEmailValidator = () => {
   const emailValidatorSpy = new EmailValidatorSpy()
   emailValidatorSpy.isEmailValid = true
   return emailValidatorSpy
-};
+}
 
 const makeEmailValidatorWithError = () => {
   class EmailValidatorEpy {
@@ -37,7 +37,7 @@ const makeEmailValidatorWithError = () => {
   }
 
   return new EmailValidatorEpy()
-};
+}
 
 const makeAuthUseCase = () => {
   class AuthUseCaseSpy {
@@ -49,7 +49,7 @@ const makeAuthUseCase = () => {
   }
 
   return new AuthUseCaseSpy()
-};
+}
 
 const makeAuthUseCaseWithError = () => {
   class AuthUseCaseSpy {
@@ -59,7 +59,7 @@ const makeAuthUseCaseWithError = () => {
   }
 
   return new AuthUseCaseSpy()
-};
+}
 
 describe('Login Router', () => {
   test('Should return 400 if no email is provided', async () => {
@@ -67,7 +67,7 @@ describe('Login Router', () => {
     const httpRequest = {
       body: {
         password: 'any_password'
-      },
+      }
     }
     const httpResponse = await sut.route(httpRequest)
 
@@ -80,7 +80,7 @@ describe('Login Router', () => {
     const httpRequest = {
       body: {
         email: 'any_email@email.com'
-      },
+      }
     }
     const httpResponse = await sut.route(httpRequest)
 
@@ -111,7 +111,7 @@ describe('Login Router', () => {
       body: {
         email: 'any_email@email.com',
         password: 'any_password'
-      },
+      }
     }
 
     await sut.route(httpRequest)
@@ -126,7 +126,7 @@ describe('Login Router', () => {
       body: {
         email: 'invalid_email@email.com',
         password: 'invalid_password'
-      },
+      }
     }
 
     const httpResponse = await sut.route(httpRequest)
@@ -140,7 +140,7 @@ describe('Login Router', () => {
       body: {
         email: 'valid_email@email.com',
         password: 'valid_password'
-      },
+      }
     }
 
     const httpResponse = await sut.route(httpRequest)
@@ -154,7 +154,7 @@ describe('Login Router', () => {
       body: {
         email: 'any_email@email.com',
         password: 'any_password'
-      },
+      }
     }
 
     const httpResponse = await sut.route(httpRequest)
@@ -172,7 +172,7 @@ describe('Login Router', () => {
       body: {
         email: 'any_email@email.com',
         password: 'any_password'
-      },
+      }
     }
 
     const httpResponse = await sut.route(httpRequest)
@@ -187,7 +187,7 @@ describe('Login Router', () => {
       body: {
         email: 'any_email@email.com',
         password: 'any_password'
-      },
+      }
     }
 
     const httpResponse = await sut.route(httpRequest)
@@ -201,7 +201,7 @@ describe('Login Router', () => {
       body: {
         email: 'invalid_email@email.com',
         password: 'any_password'
-      },
+      }
     }
     const httpResponse = await sut.route(httpRequest)
 
@@ -215,7 +215,7 @@ describe('Login Router', () => {
       body: {
         email: 'any_email@email.com',
         password: 'any_password'
-      },
+      }
     }
 
     const httpResponse = await sut.route(httpRequest)
@@ -231,7 +231,7 @@ describe('Login Router', () => {
       body: {
         email: 'any_email@email.com',
         password: 'any_password'
-      },
+      }
     }
 
     const httpResponse = await sut.route(httpRequest)
@@ -247,7 +247,7 @@ describe('Login Router', () => {
       body: {
         email: 'any_email@email.com',
         password: 'any_password'
-      },
+      }
     }
 
     const httpResponse = await sut.route(httpRequest)
@@ -261,7 +261,7 @@ describe('Login Router', () => {
       body: {
         email: 'any_email@email.com',
         password: 'any_password'
-      },
+      }
     }
 
     await sut.route(httpRequest)
